@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+  <title>Food Delight Restaurant</title>
+  <link rel="stylesheet" href="style.css">
+  
+
+</head>
+<body>
+
+  <header>
+    <div class="nav">
+    <a class="logo">Food Delight</a>
+
+  </header>
+  <div class="container">
+    <h2 class="title">Discover the Best Food</h2>
+    <div class="shop-content">
+
+
+      <div class="food-box">
+        <div class="pic"><img src="plaindosa.jpg" class="food-img"></div>
+        <h2 class="food-title">Plain Dosa</h2>
+        <span class="food-price">Rs.40</span>
+        <button class="add-cart" onclick="addToCart('Plain Dosa', 40.00)">Add to Cart</button>
+      </div>
+
+      <div class="food-box">
+        <div class="pic"><img src="paperroste.jpg" class="food-img"></div>
+        <h2 class="food-title">Paper Roast</h2>
+        <span class="food-price">Rs.65</span>
+        <button class="add-cart" onclick="addToCart('Paper Roast', 65.00)">Add to Cart</button>
+      </div>
+  
+      <div class="food-box">
+        <div class="pic"><img src="OnionRoast.jpg" class="food-img"></div>
+        <h2 class="food-title">Onion Roast</h2>
+        <span class="food-price">Rs.80</span>
+        <button class="add-cart" onclick="addToCart('Onion Roast', 80.00)">Add to Cart</button>
+      </div>
+  
+      <div class="food-box">
+        <div class="pic"><img src="eggparotta.jpg" class="food-img"></div>
+        <h2 class="food-title">Egg Parotta</h2>
+        <span class="food-price">Rs.55</span>
+        <button class="add-cart" onclick="addToCart('Egg Parotta', 55.00)">Add to Cart</button>
+      </div>
+  
+      <div class="food-box">
+        <div class="pic"><img src="101.jpg" class="food-img"></div>
+        <h2 class="food-title">Plain Omelette</h2>
+        <span class="food-price">Rs.25</span>
+        <button class="add-cart" onclick="addToCart('Plain Omelette', 25.00)">Add to Cart</button>
+      </div>
+  
+      <div class="food-box">
+        <div class="pic"><img src="102.jpg" class="food-img"></div>
+        <h2 class="food-title">Kadai Fry</h2>
+        <span class="food-price">Rs.150</span>
+        <button class="add-cart" onclick="addToCart('Kadai Fry', 150.00)">Add to Cart</button>
+      </div>
+  
+  
+      <div class="food-box">
+        <div class="pic"><img src="file:///C:/Users/USER/Videos/project1/103.jpg" class="food-img"></div>
+        <h2 class="food-title">Egg Veechu</h2>
+        <span class="food-price">Rs.65</span>
+        <button class="add-cart" onclick="addToCart('Egg Veechu', 65.00)">Add to Cart</button>
+      </div>
+  
+  
+      <div class="food-box">
+        <div class="pic"><img src="file:///C:/Users/USER/Videos/project1/104.jpg" class="food-img"></div>
+        <h2 class="food-title">Egg Roast</h2>
+        <span class="food-price">Rs.65</span>
+        <button class="add-cart" onclick="addToCart('Egg Roast', 65.00)">Add to Cart</button>
+      </div>
+
+
+
+    </div>
+  </div>
+<div class="box1">
+<center><h2>Shopping Cart</h2>
+        <ul id="cart" >
+            
+        </ul>
+        <p>Total: $<span id="total">0.00</span></p></center>
+<div class="popup">
+<button onclick="myFunction()">Purchase
+  <span class="popuptext" id="myPopup">Purchase successfully</span>
+</button>
+</div>
+</div>
+<div class="footer">
+  <h2>Contact Us</h2>
+            <p>If you have any questions or need assistance, please feel free to contact us using the information below:</p>
+            <ul>
+                <li>Email: contact@shopme.com</li>
+                <li>Phone: +9/1 (123) 456-7890</li>
+                <li>Address: 123 West St, Thoothukudi, India</li>
+            </ul>
+</div>
+<script>
+
+        const cart = [];
+        let total = 0.00;
+
+        
+        function addToCart(productName, price) {
+            cart.push({ name: productName, price: price });
+            total += price;
+            updateCart();
+        }
+
+       
+        function updateCart() {
+            const cartList = document.getElementById('cart');
+            const totalAmount = document.getElementById('total');
+            cartList.innerHTML = '';
+            cart.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = `${item.name} - $${item.price.toFixed(2)}`;
+                cartList.appendChild(li);
+            });
+            totalAmount.textContent = total.toFixed(2);
+        }
+function myFunction() {
+  var popup = document.getElementById("myPopup");
+  popup.classList.toggle("show");
+  
+}
+</script>
+
+</body>
+</html>
